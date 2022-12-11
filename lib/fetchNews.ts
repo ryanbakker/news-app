@@ -16,7 +16,7 @@ const fetchNews = async (
       myQuery(
         access_key: $access_key
         categories: $categories
-        countries: "nz"
+        countries: "us"
         sort: "published_desc"
         keywords: $keywords
       ) {
@@ -65,8 +65,6 @@ const fetchNews = async (
     }
   );
 
-  console.log("Loading data for category >>> ", category, keywords);
-
   const newsResponse = await res.json();
 
   // Sort function by images vs not images present
@@ -77,5 +75,3 @@ const fetchNews = async (
 };
 
 export default fetchNews;
-
-// stepzen import curl "http://api.mediastack.com/v1/news?access_key=0438f5503f6a807dbc23f2903d224b33&countries=us%2Cgb&limit=100&offset=0&sort=published_desc"

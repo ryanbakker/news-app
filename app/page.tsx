@@ -1,13 +1,18 @@
 import { categories } from "../constants";
 import fetchNews from "../lib/fetchNews";
+import NewsList from "./NewsList";
+import response from "../response.json";
 
 async function Homepage() {
   // Fetch news data
+  // CURRENTLY UNDER MOCK DATA
   const news: NewsResponse = await fetchNews(categories.join(","));
 
-  console.log(news);
-
-  return <div>{/* NewsList */}</div>;
+  return (
+    <div>
+      <NewsList news={news} />
+    </div>
+  );
 }
 
 export default Homepage;
